@@ -1,22 +1,10 @@
-# CLI Essentials: Basic Commands in Bash (Continued)
+# CLI Essentials: Working with Programs in Bash
 
 ## Learning Goals
 
-* Demonstrate interacting with files
 * Demonstrate running and killing processes
 
 ## Introduction
-
-Bash is a text-based interpreter for controlling your computer (or operating system).
-Bash is actually an acronym which stands for **B**ourne-**A**gain **SH**ell. It replaced
-the Bourne shell and "bashed together" the unix programs sh, csh and ksh. From it you can
-navigate the files on your computer and execute programs.
-
-You can also connect to other computers and basically do everything you can do in your GUI
-Operating System (like OS X or Windows).
-
-When you open a terminal, you're basically within your file system, or in a directory, just
-like you are when you open a Finder window or an Explorer window.
 
 ## Demonstrate Interacting With Files
 
@@ -145,8 +133,3 @@ Enter `$ q` ("**q**uit") to return to your command prompt.
 ## Conclusion
 
 ## Resources
-
-- [Lifehacker on the Command Line](http://lifehacker.com/5633909/who-needs-a-mouse-learn-to-use-the-command-line-for-almost-anything)
-- [Environment Variables](http://cbednarski.com/articles/understanding-environment-variables-and-the-unix-path/)
-- [Built-in Shell Commands](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html) *Very useful*
-- [15 Useful Bash Commands](http://www.thegeekstuff.com/2010/08/bash-shell-builtin-commands/)thegeekstuff.com/2010/08/bash-shell-builtin-commands/)
