@@ -158,4 +158,19 @@ documentation. Enter `$ q` ("**q**uit") to return to your command prompt.
 
 ## Conclusion
 
+Software developers still rely heavily on command-line interfaces to perform
+tasks more efficiently, configure their machine, or access programs and program
+features that are not available through a graphical interface. File interactions
+and process management may be difficult for new CLI users to grasp because the
+tools used are different from their graphical counterparts.
+
+However, the ideas are familiar and intuitive, and with a little practice, will
+become natural. Because these tasks are involved in everything you will do in
+software development. Learning how to effectively work with them is an essential
+skill.
+
 ## Resources
+* [Using The Terminal Command ‘cat’ To View The Contents Of Files](http://www.mactricksandtips.com/2012/07/using-the-terminal-command-cat-to-view-the-contents-of-files.html)
+* [On the Shebang](https://scriptingosx.com/2017/10/on-the-shebang/)
+* [How to View and Kill Processes Using the Terminal in Mac OS X](https://www.chriswrites.com/how-to-view-and-kill-processes-using-the-terminal-in-mac-os-x/)
+* [HOW TO VIEW AND KILL PROCESSES ON YOUR MAC](https://setapp.com/how-to/how-to-view-and-kill-processes-on-mac)
