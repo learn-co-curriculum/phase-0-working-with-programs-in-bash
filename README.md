@@ -2,40 +2,63 @@
 
 ## Learning Goals
 
-* Demonstrate interacting With files
+* Demonstrate interacting with files
 * Demonstrate running and killing processes
 
 ## Introduction
 
-The command-line interface gives the user access to all of the computer's
-processes with fewer clicks or or deep-dives into the graphical user interface
-(GUI) - if these interactions are available in the GUI at all. As developers
-begin to work more with building applications, it becomes more important to be
-familiar with these tasks related to modifying files, reading output, and
-working with programs. The terminal has a number of useful commands that can
-display running processes, kill them, and change their priority level. 
+The command-line interface gives us access to all of the computer's
+capabilities with fewer clicks or or deep-dives into the graphical user
+interface (GUI) &mdash; if these interactions are available in the GUI at all.
+
+While we've learned how to travel our file system and create empty files and
+directories, we want to start working with tools that allow us to create,
+update, and even run programs. Traditionally you used the Finder and
+double-clicking to launch or edit files. You can do the same work, as usual,
+faster, using the CLI.
+
+You can capture output to new files and even kill programs that have hung and
+are making your laptop's fan sound like a plane taking off.
 
 ## Demonstrate Interacting With Files
 
 ### Printing `String`s With `echo`
 
-The echo command takes a string and prints it to the screen. You can redirect
-output into a file: ``` echo “I’m printing to the screen” >> visible```
+The `echo` command takes a string and prints it to the screen. You can redirect
+output into a file:
+
+KG: expand out, show simple echo THEN show echo redirect, also rm smart curly-quotes
+here.
+
+``` echo “I’m printing to the screen” >> visible```
+
+KG: That `>>` is called "redirection" we're "redirecting" what we saw on the
+monitor "into" a file. `>>` means append while `>` means overwrite.
 
 ### Viewing File Contents With `cat` and `open`
 
-We have a lot of commands available to us. Useful ones include `open` and `cat`
+You've already seen us use `cat` to see what was in an empty file. Let's use it
+to see what's in `visible`
 
-The `open` command is interesting because it will trigger the default action
-associated with the file type. So `$ open .` will popup a finder window with the
-current directory in finder (because remember that `.` is an alias to the
-current directory). Entering `$ open hello_world.rb` will open that file in your
-default editor.
+`cat visible`
 
+The `open` command, available on Mac OSX, is interesting because it will
+trigger the default action associated with the file type. So `$ open .` will
+popup a Finder window with the current directory in finder (because remember
+that `.` is an alias to the current directory).
+
+Entering `$ open hello_world.rb` will open that file in your default editor:
+the program that you use to write Ruby code. You'll be writing this one a lot
+in the future!
+
+KG: integrate this para above
 We can print the contents of a file by using the `cat` command. Entering `$ cat
 [file-name]` (from "con**cat**enate") reads a file and prints the content to
 your command line.
 
+
+KG: (no no no no no, not yet) we've not introduced permissions, chmod,
+executables, no.
 ### Use `shebang`
 
 We can use shebang so bash knows how to run our program. When we try to run the
@@ -44,6 +67,26 @@ found. It's only after we add the executable flag to it that it runs like a
 normal program does.
 
 ### PATH and Environment Variables
+
+KG: Needs a lot more setup. We've not discussed envvars yet we also probably
+need to provide an example.....
+
+Let's keep this _SIMPLE_
+
+1. env vars exist, shells can be configured, and one of those ways is thru env
+   vars
+2.  PATH is one. Programs might be installed in many different directories.
+    Directories whose names are listed in the PATH variable can have this
+    programs run without you haveing to `cd` to the directory where they are to
+    run them
+3. Let's save our PATH to BACKUP_PATH\
+4. Now let's export PATH=""
+5. show everything is broken
+6. restore path from backup path
+7. blah blah, take away is PATH is a very important env var, there are many
+   more but they're working to help your hsell experience along, etc.
+
+KG: Trash this para. below
 
 The `PATH` variable gives the computer an ordered list of directories to search
 in to find an executable with he name you typed.  In our case, it's going to
@@ -63,26 +106,33 @@ this is at the moment don't worry), it will look something like this:
 
 Each directory in the path is separated by the `:` ("colon") symbol.
 
+KG: Trashthis
 If you ever get errors where you type something in the terminal and it says it
 can't be found, the executable you're trying to run needs to be added to the
 path. If the wrong executable is getting run, the order of directories in your
 path is wrong.
 
+KG: Trashthis
 The PATH variable is an environmental variable. These are variables you can set
 specific to your computer's environment which can then be used in other
 programs. For example, in Ruby you can type `ENV[name_of_variable]` to access an
 environmental variable. These are typically set in your bash profile, in a bash
 script, or at the command line.
 
+KG: keep this
 **Tip:** *If you want to find out where the program being run is located when
-you type a command at the command line, use the which command; entering* `$
-which ruby` *will tell you where the Ruby binary is located.* Whenever you type
+you type a command at the command line, use the `which` command; entering* `$
+which ruby` *will tell you where the Ruby binary is located.* You can use that
+information to `cd` over to is and `ls -l` it and learn more about your system.
+Whenever you type
 a command the path is going to be searched in order until it finds an executable
 that matches name
 
+KG: I dont' mind this...
 We can add our own directories to the path so that our programs can be found
 when we run them 
 
+KG: but not this...too early
 Here we add the bash review bin folder to our path by using the export keyword
 and then attaching the current path to the end of it
 
@@ -118,6 +168,9 @@ We can look for them using the `ps` command with the flag `aux`
 We can also use the `pkill` command and give it the name of the process to stop
 running. This uses both techniques of looking for a process and then killing it
 if it finds it.
+
+KG: Not sure we need this....it's very cool..but...it's so confusing, this is
+our BASIC population...
 
 ### Piping "|"
 
