@@ -2,7 +2,7 @@
 
 ## Learning Goals
 
-* Demonstrate interacting With files
+* Demonstrate interacting with files
 * Demonstrate running and killing processes
 
 ## Introduction
@@ -139,7 +139,7 @@ We can also use the `pkill` command and give it the name of the process to stop
 running. This uses both techniques of looking for a process and then killing it
 if it finds it.
 
-### Searching with `grep` and `|` (Pipe)
+### Searching With `grep` and `|` (Pipe)
 
 The name `grep` comes from a Unix line editor command `g/re/p` which means
 "globally search for a regular expression and print all lines containing it".
