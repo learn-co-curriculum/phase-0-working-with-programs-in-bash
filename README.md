@@ -47,7 +47,7 @@ You can also use echo in place of `ls` in certain scenarios. For example, to
 list all `.rb` files in the current directory, you can execute the following
 command: `echo *.rb`.
 
-## PATH and Environment Variables
+## `PATH` and Environment Variables
 
 An _environment variable_ which can be used by multiple applications or
 processes. It is a variable with a name and an associated value that can be used
