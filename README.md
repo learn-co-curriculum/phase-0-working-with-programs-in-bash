@@ -1,25 +1,25 @@
-# CLI Essentials: Working with Programs in Bash
+# Working with Programs in Bash
 
 ## Learning Goals
 
-* Viewing file contents with `cat` and `open`
-* Printing `String`s with `echo`
-* `PATH` and environment variables
-* Looking up Bash documentation with `man`
+* View file contents with `cat` and `open`
+* Print `String`s with `echo`
+* Set `PATH` and environment variables
+* Look up Bash documentation with `man`
 
 ## Introduction
 
-The command-line interface gives the user access to all of the computer's
-processes with fewer clicks or or deep-dives into the graphical user interface
-(GUI) - if these interactions are available in the GUI at all. As developers
-begin to work more with building applications, it becomes more important to be
-familiar with these tasks related to modifying files, reading output, and
+Sometimes when we interact with computers via the graphical user interface
+(GUI), it takes several clicks or deep dives into the controls to accomplish
+what we want. We've started to see in the earlier lessons that interacting via
+the command line interface (CLI) can give us more direct actions and valuable
+shortcuts. As we begin to build applications, it will become more important to
+be familiar with these tasks related to modifying files, reading output, and
 working with programs. The terminal has a number of useful commands that can
-display running processes, kill them, and change their priority level. 
+display running processes, kill them, and change their priority level.
 
-## Viewing File Contents With `cat` and `open`
+## View File Contents With `cat` and `open`
 
-We have a lot of commands available to us. Useful ones include `open` and `cat`.
 We can print the contents of a file by using the `cat` command. Entering `$ cat
 [filename]` (from "con**cat**enate") reads a file and prints the content to your
 command line.
@@ -29,10 +29,10 @@ associated with the file type. So `$ open .` will popup a finder window with the
 current directory in finder (because `.` is an alias to the current directory).
 Entering `$ open hello_world.rb` will open that file in your default editor.
 
-## Printing `String`s With `echo`
+## Print `String`s With `echo`
 
 Developers will often find themselves needing to write text in the terminal. The
-`echo` command has a number of users -- probably most commonly used to have a
+`echo` command has a number of uses -- probably most commonly used to have a
 shell script display a message or instructions, such as "Please enter Y or N" in
 an interactive session with users.
 
@@ -47,10 +47,10 @@ You can also use echo in place of `ls` in certain scenarios. For example, to
 list all `.rb` files in the current directory, you can execute the following
 command: `echo *.rb`.
 
-## `PATH` and Environment Variables
+## Set `PATH` and Environment Variables
 
 An _environment variable_ which can be used by multiple applications or
-processes. It is a variable with a name and an associated value that can be used
+processes, is a variable with a name and an associated value that can be used
 for anything like the location of executable files, libraries, current working
 directory, default shell, or local system settings.
 
@@ -79,9 +79,10 @@ export BACKUP_PATH="/Users/kellyegreene/.rvm/gems/ruby-2.4.1/bin:/Users/kellyegr
 ```
 
 Now if something were to happen to our original `PATH` variable, we can restore
-it from `BACKUP_PATH`. `PATH` is a very important environment variable.
-There are many more environment variables for other uses. These include, but are
-not limited to:
+it from `BACKUP_PATH`.
+
+There are a lot of environment variables and, as you grow as a developer, you
+will likely encounter some of them. Others you might see include:
 
 * Execution mode (e.g., production, development, staging, etc.)
 * Domain names
@@ -96,22 +97,23 @@ which ruby` *will tell you where the Ruby binary is located.* Whenever you type
 a command the path is going to be searched in order until it finds an executable
 that matches name
 
-## Looking Up Bash Documentation With `man`
+## Look Up Bash Documentation With `man`
 
-The `man` command is the key to command line wisdom. It brings up a  **man**ual
-pages for almost any command; It's the equivalent of a help system for the
+The `man` command is the key to command line wisdom. It brings up a **man**ual
+pages for almost any command. It's the equivalent of a help system for the
 command line.
 
-For example, if you're curious what the options on `ps` mean, enter:
+For example, if you're curious what the options on `ps` mean, you can go to your
+terminal and enter:
 
 ```bash
 $ man ps
 ```
 
-Read about what the `a` and `u` options do. Notice that the `x` option is a
-suffix on the `a` option. The `man` command reveals very useful
-reference documentation on the various bash commands. You'll notice that your
-command prompt has disappeared. Don't panic! You're just inside the
+In the terminal output, read about what the `a` and `u` options do. Notice that
+the `x` option is a suffix on the `a` option. The `man` command reveals very
+useful reference documentation on the various bash commands. You'll notice that
+your command prompt has disappeared. Don't panic! You're just inside the
 documentation. Enter `$ q` ("**q**uit") to return to your command prompt.
 
 ## Conclusion
@@ -120,12 +122,10 @@ Software developers still rely heavily on command-line interfaces to perform
 tasks more efficiently, configure their machine, or access programs and program
 features that are not available through a graphical interface. File interactions
 and process management may be difficult for new CLI users to grasp because the
-tools used are different from their graphical counterparts.
-
-However, the ideas are familiar and intuitive, and with a little practice, will
-become natural. Because these tasks are involved in everything you will do in
-software development. Learning how to effectively work with them is an essential
-skill.
+tools used are different from their graphical counterparts. However, the ideas
+are familiar and intuitive, and with a little practice, will become natural.
+Because these tasks are involved in everything you will do in software
+development, learning how to effectively work with them is an essential skill.
 
 ## Resources
 
