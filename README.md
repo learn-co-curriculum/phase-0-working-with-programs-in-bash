@@ -12,58 +12,68 @@
 Sometimes when we interact with computers via the graphical user interface
 (GUI), it takes several clicks or deep dives into the controls to accomplish
 what we want. We've started to see in the earlier lessons that interacting via
-the command line interface (CLI) can give us more direct actions and valuable
-shortcuts. As we begin to build applications, it will become more important to
-be familiar with these tasks related to modifying files, reading output, and
-working with programs. The terminal has a number of useful commands that can
-display running processes, kill them, and change their priority level.
+the command line interface (CLI) can make us faster!
+
+As we begin to build applications, it will become important to also
+be familiar with tasks related to displaying files, editing them with
+a code editor, or getting information from the operating system.
 
 ## View File Contents With `cat` and `open`
 
 We can print the contents of a file by using the `cat` command. Entering `$ cat
-[filename]` (from "con**cat**enate") reads a file and prints the content to your
+[filename]` reads a file and prints the content to your
 command line.
+
+> **ASIDE** `cat` comes from `catenate` a word that means "make like a chain".
+> Unix thinks of a file as a "chain of bytes" that it feeds to the screen.
 
 The `open` command is interesting because it will trigger the default action
 associated with the file type. So `$ open .` will popup a finder window with the
 current directory in finder (because `.` is an alias to the current directory).
-Entering `$ open hello_world.rb` will open that file in your default editor.
+Entering `$ open hello_world.rb` will run the default program for files of
+a "Ruby" type – usually a code editor.
 
 ## Print `String`s With `echo`
 
 Developers will often find themselves needing to write text in the terminal. The
-`echo` command has a number of uses -- probably most commonly used to have a
-shell script display a message or instructions, such as "Please enter Y or N" in
+`echo` command has a number of uses -- probably the most common is to have a
+program display a message or instructions, such as "Please enter Y or N" in
 an interactive session with users.
 
-The `echo` command takes a string and prints it to the screen. You can redirect
-output into a file: ``` echo "I'm printing to the screen" >> [filename]```.
+The `echo` command takes a string and prints it to the screen.
+
+```bash
+$ echo "Hi world!"
+Hi world!
+```
+
+You can "redirect" output into a file:
+
+```bash
+echo "I'm printing to the screen" >> [filename]
+```
 
 This is called _redirection_. We're "redirecting" what we see on the monitor
 into a file. The `>>` symbol will append content into the file while `>` means
 overwrite.
 
-You can also use echo in place of `ls` in certain scenarios. For example, to
-list all `.rb` files in the current directory, you can execute the following
-command: `echo *.rb`.
+> **BE CAREFUL** Using `>` when you mean `>` can cause some real heartache because
+> `>` "clobbers" or "overwrites" the file. Some files on your system are **very**
+> important and "clobbering" them could hurt your machine.
 
 ## Set `PATH` and Environment Variables
 
 An _environment variable_ which can be used by multiple applications or
-processes, is a variable with a name and an associated value that can be used
-for anything like the location of executable files, libraries, current working
-directory, default shell, or local system settings.
-
-If you run the command `printenv`, you will see a list all the environment
-variables currently set.
-
-For displaying the value of any specific environment variable run the echo
-$[variable name] on the terminal, as shown below.
+processes, is a variable which can be configured to change the way the shell
+works. You might tell the shell, via environment variable "use colors whenever
+you an" or "never use colors in output!" Discussing how to set these up is beyond
+our scope right now. But it's important to see how environment varaibles, like
+directory path shortcuts, make our lives easier.
 
 For exampple, `PATH` is an environment variable. Programs might be installed in
 many different directories. Directories whose names are listed in the `PATH`
-variable can have its programs run without having to `cd` to the directory where
-they are to run them.
+variable can have their programs run without having to `cd` to the directory where
+they are to run them. These paths are assigned to `PATH` and separated by `:`.
 
 Let's try viewing the current `PATH`.
 
@@ -72,14 +82,16 @@ echo $PATH
 /Users/kellyegreene/.rvm/gems/ruby-2.4.1/bin:/Users/kellyegreene/.rvm/gems/ruby-2.4.1@global/bin:/Users/kellyegreene/.rvm/rubies/ruby-2.4.1/bin:/Users/kellyegreene/.nvm/versions/node/v8.9.4/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin:/usr/local/share/npm/lib/node_modules/grunt-cli/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/kellyegreene/Library/Android/sdk/tools:/Users/kellyegreene/Library/Android/sdk/platform-tools:/Users/kellyegreene/Library/Android/sdk/tools:/Users/kellyegreene/Library/Android/sdk/platform-tools:/Users/kellyegreene/.rvm/bin
 ```
 
-Let's save this `PATH` to `BACKUP_PATH` using `export`.
+Any pogram in these directories can be run by simply typing the program name. When `kellyegreene`
+types `ruby` the shell starts working at the first directory in the `PATH` to see if it finds
+a program that matches. In this case it _would_ find the `ruby` program in `/Users/kellyegreene/.rvm/gems/ruby-2.4.1/bin`
+and run it. The first match in the `PATH` variable wins so the order of the `PATH` is important.
 
-```bash
-export BACKUP_PATH="/Users/kellyegreene/.rvm/gems/ruby-2.4.1/bin:/Users/kellyegreene/.rvm/gems/ruby-2.4.1@global/bin:/Users/kellyegreene/.rvm/rubies/ruby-2.4.1/bin:/Users/kellyegreene/.nvm/versions/node/v8.9.4/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin:/usr/local/share/npm/lib/node_modules/grunt-cli/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/kellyegreene/Library/Android/sdk/tools:/Users/kellyegreene/Library/Android/sdk/platform-tools:/Users/kellyegreene/Library/Android/sdk/tools:/Users/kellyegreene/Library/Android/sdk/platform-tools:/Users/kellyegreene/.rvm/bin"
-```
-
-Now if something were to happen to our original `PATH` variable, we can restore
-it from `BACKUP_PATH`.
+**Top Tip:** *If you want to find out where the program being run is located
+when you type a command at the command line, use the which command; entering* `$
+which ruby` *will tell you where the Ruby binary is located.* Whenever you type
+a command the path is going to be searched in order until it finds an executable
+that matches name
 
 There are a lot of environment variables and, as you grow as a developer, you
 will likely encounter some of them. Others you might see include:
@@ -88,20 +100,18 @@ will likely encounter some of them. Others you might see include:
 * Domain names
 * API URL/URIs
 
-We can also add our own directories to the path so that our programs can be found
-when we run them.
-
-**Top Tip:** *If you want to find out where the program being run is located
-when you type a command at the command line, use the which command; entering* `$
-which ruby` *will tell you where the Ruby binary is located.* Whenever you type
-a command the path is going to be searched in order until it finds an executable
-that matches name
+Eventually you'll learn to configure your shell environment to help you do work
+more efficently. You'll define variables like `BIG_PROJECT_DIRECTORY` or write
+custom programs that you can run from the CLI that make you more efficient.
 
 ## Look Up Bash Documentation With `man`
 
 The `man` command is the key to command line wisdom. It brings up a **man**ual
 pages for almost any command. It's the equivalent of a help system for the
-command line.
+command line. When Unix was first invented, its manuals were so big and heavy
+and expensive to print the developers had the idea to write the `man`ual
+in the operating system itself. This is an idea that's been popular with programmers
+and environmentalists ever since.
 
 For example, if you're curious what the options on `ps` mean, you can go to your
 terminal and enter:
@@ -122,10 +132,7 @@ Software developers still rely heavily on command-line interfaces to perform
 tasks more efficiently, configure their machine, or access programs and program
 features that are not available through a graphical interface. File interactions
 and process management may be difficult for new CLI users to grasp because the
-tools used are different from their graphical counterparts. However, the ideas
-are familiar and intuitive, and with a little practice, will become natural.
-Because these tasks are involved in everything you will do in software
-development, learning how to effectively work with them is an essential skill.
+tools used are different from their graphical counterparts. However, with a little practice, these new ways of working will become your ally.
 
 ## Resources
 
