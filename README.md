@@ -24,7 +24,7 @@ We can print the contents of a file by using the `cat` command. Entering `$ cat
 [filename]` reads a file and prints the content to your
 command line.
 
-> **ASIDE** `cat` comes from `catenate` a word that means "make like a chain".
+> **ASIDE**: `cat` comes from `catenate` a middle-English word that means "make like a chain".
 > Unix thinks of a file as a "chain of bytes" that it feeds to the screen.
 
 The `open` command is interesting because it will trigger the default action
