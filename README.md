@@ -3,7 +3,8 @@
 ## Learning Goals
 
 * View file contents with `cat` and `open`
-* Print `String`s with `echo`
+* Print text with `echo`
+* Redirect text
 * Set `PATH` and environment variables
 * Look up Bash documentation with `man`
 
@@ -28,17 +29,22 @@ command line.
 > Unix thinks of a file as a "chain of bytes" that it feeds to the screen.
 
 The `open` command is interesting because it will trigger the default action
-associated with the file type. So `$ open .` will popup a finder window with the
-current directory in finder (because `.` is an alias to the current directory).
-Entering `$ open hello_world.rb` will run the default program for files of
-a "Ruby" type – usually a code editor.
+associated with the file type. "Default actions" are defined by the operating
+system. This command is only available on Mac OSX.
 
-## Print `String`s With `echo`
+`$ open .` will popup a Finder window with the
+current directory in finder (recall: `.` is an alias to the current directory).
+Entering `$ open hello_world.rb` will run the default program for files of
+a "Ruby" type – usually a code editor. Some other platforms have adopted
+an `open` program because they liked OSX's idea. Try it out on your computer
+and see if it's supported.
+
+## Print Text With `echo`
 
 Developers will often find themselves needing to write text in the terminal. The
 `echo` command has a number of uses -- probably the most common is to have a
 program display a message or instructions, such as "Please enter Y or N" in
-an interactive session with users.
+a dialog with users.
 
 The `echo` command takes a string and prints it to the screen.
 
@@ -47,33 +53,39 @@ $ echo "Hi world!"
 Hi world!
 ```
 
-You can "redirect" output into a file:
+## Redirect Text
+
+You can "redirect" `echo` text into a file:
 
 ```bash
 echo "I'm printing to the screen" >> [filename]
 ```
 
 This is called _redirection_. We're "redirecting" what we see on the monitor
-into a file. The `>>` symbol will append content into the file while `>` means
-overwrite.
+into a file. The `>>` symbol will ***append*** content into the file while `>` means
+***overwrite***.
 
-> **BE CAREFUL** Using `>` when you mean `>` can cause some real heartache because
+> **BE CAREFUL** Using `>` when you mean `>` can make you real sad because
 > `>` "clobbers" or "overwrites" the file. Some files on your system are **very**
-> important and "clobbering" them could hurt your machine.
+> important and "clobbering" them could hurt your machine!
 
 ## Set `PATH` and Environment Variables
 
 An _environment variable_ which can be used by multiple applications or
 processes, is a variable which can be configured to change the way the shell
 works. You might tell the shell, via environment variable "use colors whenever
-you an" or "never use colors in output!" Discussing how to set these up is beyond
-our scope right now. But it's important to see how environment varaibles, like
-directory path shortcuts, make our lives easier.
+you can" or "never use colors in output" Discussing how to set these up is beyond
+our scope right now. But it's important to see that environment varaibles, like
+directory path shortcuts, or those mysterious _hidden files_ configure and adjust
+our CLI experience.
 
-For exampple, `PATH` is an environment variable. Programs might be installed in
+For example, `PATH` is a very important environment variable. In Unix, programs
+are often installed in
 many different directories. Directories whose names are listed in the `PATH`
 variable can have their programs run without having to `cd` to the directory where
-they are to run them. These paths are assigned to `PATH` and separated by `:`.
+they are to run them (OR provide a long absolute path).
+
+Paths are assigned to the `PATH` and separated by `:`.
 
 Let's try viewing the current `PATH`.
 
@@ -82,10 +94,30 @@ echo $PATH
 /Users/kellyegreene/.rvm/gems/ruby-2.4.1/bin:/Users/kellyegreene/.rvm/gems/ruby-2.4.1@global/bin:/Users/kellyegreene/.rvm/rubies/ruby-2.4.1/bin:/Users/kellyegreene/.nvm/versions/node/v8.9.4/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin:/usr/local/share/npm/lib/node_modules/grunt-cli/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/kellyegreene/Library/Android/sdk/tools:/Users/kellyegreene/Library/Android/sdk/platform-tools:/Users/kellyegreene/Library/Android/sdk/tools:/Users/kellyegreene/Library/Android/sdk/platform-tools:/Users/kellyegreene/.rvm/bin
 ```
 
-Any pogram in these directories can be run by simply typing the program name. When `kellyegreene`
-types `ruby` the shell starts working at the first directory in the `PATH` to see if it finds
-a program that matches. In this case it _would_ find the `ruby` program in `/Users/kellyegreene/.rvm/gems/ruby-2.4.1/bin`
+Any program in these directories can be run by simply typing the program name. When `kellyegreene`
+types `ruby` the shell starts by looking the first directory in the `PATH` to see if it finds
+a program that matches.
+
+In this case it _would_ find the `ruby` program in `/Users/kellyegreene/.rvm/gems/ruby-2.4.1/bin`
 and run it. The first match in the `PATH` variable wins so the order of the `PATH` is important.
+
+If this directory **were not** in the `PATH`, `kellyegreene` would have to do one of the following to run 
+`ruby -v` &mdash; a command that shows the program's version.
+
+```bash
+cd /Users/kellyegreene/.rvm/gems/ruby-2.4.1/bin
+./ruby -v
+```
+
+or
+
+```bash
+/Users/kellyegreene/.rvm/gems/ruby-2.4.1/bin/ruby -v
+```
+
+In the shell, all programs that are not in the path have to be run with an
+absolute path. In both of these examples you should see how we send the
+shell a full absolute path (remember what `.` means!).
 
 **Top Tip:** *If you want to find out where the program being run is located
 when you type a command at the command line, use the which command; entering* `$
@@ -94,11 +126,13 @@ a command the path is going to be searched in order until it finds an executable
 that matches name
 
 There are a lot of environment variables and, as you grow as a developer, you
-will likely encounter some of them. Others you might see include:
+will encounter more of them. Others you might see include:
 
 * Execution mode (e.g., production, development, staging, etc.)
 * Domain names
 * API URL/URIs
+* GIT_AUTHOR
+* GIT_AUTHOR_EMAIL
 
 Eventually you'll learn to configure your shell environment to help you do work
 more efficently. You'll define variables like `BIG_PROJECT_DIRECTORY` or write
@@ -111,7 +145,7 @@ pages for almost any command. It's the equivalent of a help system for the
 command line. When Unix was first invented, its manuals were so big and heavy
 and expensive to print the developers had the idea to write the `man`ual
 in the operating system itself. This is an idea that's been popular with programmers
-and environmentalists ever since.
+and environmentalists and mail-carriers ever since.
 
 For example, if you're curious what the options on `ps` mean, you can go to your
 terminal and enter:
