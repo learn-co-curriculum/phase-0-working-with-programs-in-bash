@@ -71,19 +71,18 @@ into a file. The `>>` symbol will ***append*** content into the file while `>` m
 
 ## Set `PATH` and Environment Variables
 
-An _environment variable_ which can be used by multiple applications or
-processes, is a variable which can be configured to change the way the shell
-works. You might tell the shell, via environment variable "use colors whenever
-you can" or "never use colors in output" Discussing how to set these up is beyond
-our scope right now. But it's important to see that environment varaibles, like
-directory path shortcuts, or those mysterious _hidden files_ configure and adjust
-our CLI experience.
+An _environment variable_ is a variable which can be configured to change the
+way the shell works and used by multiple applications or processes. You might
+tell the shell, via an environment variable "use colors whenever you can" or
+"never use colors in output" Discussing how to set these up is beyond our scope
+right now. But it's important to see that environment variables, like directory
+path shortcuts, or those mysterious _hidden files_ configure and adjust our CLI
+experience.
 
 For example, `PATH` is a very important environment variable. In Unix, programs
-are often installed in
-many different directories. Directories whose names are listed in the `PATH`
-variable can have their programs run without having to `cd` to the directory where
-they are to run them (OR provide a long absolute path).
+are often installed in many different directories. Directories whose names are
+listed in the `PATH` variable can have their programs run without having to `cd`
+to the directory where they are to run them (OR provide a long absolute path).
 
 Paths are assigned to the `PATH` and separated by `:`.
 
@@ -94,15 +93,17 @@ echo $PATH
 /Users/kellyegreene/.rvm/gems/ruby-2.4.1/bin:/Users/kellyegreene/.rvm/gems/ruby-2.4.1@global/bin:/Users/kellyegreene/.rvm/rubies/ruby-2.4.1/bin:/Users/kellyegreene/.nvm/versions/node/v8.9.4/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin:/usr/local/share/npm/lib/node_modules/grunt-cli/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/kellyegreene/Library/Android/sdk/tools:/Users/kellyegreene/Library/Android/sdk/platform-tools:/Users/kellyegreene/Library/Android/sdk/tools:/Users/kellyegreene/Library/Android/sdk/platform-tools:/Users/kellyegreene/.rvm/bin
 ```
 
-Any program in these directories can be run by simply typing the program name. When `kellyegreene`
-types `ruby` the shell starts by looking the first directory in the `PATH` to see if it finds
-a program that matches.
+Any program in these directories can be run by simply typing the program name.
+When `kellyegreene` types `ruby` the shell starts by looking at the first
+directory in the `PATH` to see if it finds a program that matches.
 
-In this case it _would_ find the `ruby` program in `/Users/kellyegreene/.rvm/gems/ruby-2.4.1/bin`
-and run it. The first match in the `PATH` variable wins so the order of the `PATH` is important.
+In this case it _would_ find the `ruby` program in
+`/Users/kellyegreene/.rvm/gems/ruby-2.4.1/bin` and run it. The first match in
+the `PATH` variable wins so the order of the `PATH` is important.
 
-If this directory **were not** in the `PATH`, `kellyegreene` would have to do one of the following to run 
-`ruby -v` &mdash; a command that shows the program's version.
+If this directory **were not** in the `PATH`, `kellyegreene` would have to do
+one of the following to run `ruby -v` &mdash; a command that shows the program's
+version.
 
 ```bash
 cd /Users/kellyegreene/.rvm/gems/ruby-2.4.1/bin
@@ -116,7 +117,7 @@ or
 ```
 
 In the shell, all programs that are not in the path have to be run with an
-absolute path. In both of these examples you should see how we send the
+absolute path. In both of these examples, you should see how we send the
 shell a full absolute path (remember what `.` means!).
 
 **Top Tip:** *If you want to find out where the program being run is located
@@ -134,8 +135,8 @@ will encounter more of them. Others you might see include:
 * GIT_AUTHOR
 * GIT_AUTHOR_EMAIL
 
-Eventually you'll learn to configure your shell environment to help you do work
-more efficently. You'll define variables like `BIG_PROJECT_DIRECTORY` or write
+Eventually, you'll learn to configure your shell environment to help you do work
+more efficiently. You'll define variables like `BIG_PROJECT_DIRECTORY` or write
 custom programs that you can run from the CLI that make you more efficient.
 
 ## Look Up Bash Documentation With `man`
@@ -166,7 +167,8 @@ Software developers still rely heavily on command-line interfaces to perform
 tasks more efficiently, configure their machine, or access programs and program
 features that are not available through a graphical interface. File interactions
 and process management may be difficult for new CLI users to grasp because the
-tools used are different from their graphical counterparts. However, with a little practice, these new ways of working will become your ally.
+tools used are different from their graphical counterparts. However, with a
+little practice, these new ways of working will become your ally.
 
 ## Resources
 
