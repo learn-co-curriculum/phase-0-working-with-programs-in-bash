@@ -65,7 +65,7 @@ This is called _redirection_. We're "redirecting" what we see on the monitor
 into a file. The `>>` symbol will ***append*** content into the file while `>` means
 ***overwrite***.
 
-> **BE CAREFUL** Using `>` when you mean `>` can make you real sad because
+> **BE CAREFUL** Using `>` when you mean `>>` can make you real sad because
 > `>` "clobbers" or "overwrites" the file. Some files on your system are **very**
 > important and "clobbering" them could hurt your machine!
 
