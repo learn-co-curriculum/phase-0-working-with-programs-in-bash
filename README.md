@@ -173,3 +173,4 @@ little practice, these new ways of working will become your ally.
 ## Resources
 
 * [Using The Terminal Command ‘cat’ To View The Contents Of Files](http://www.mactricksandtips.com/2012/07/using-the-terminal-command-cat-to-view-the-contents-of-files.html)
+
