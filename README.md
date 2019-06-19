@@ -49,8 +49,8 @@ a dialog with users.
 The `echo` command takes a string and prints it to the screen.
 
 ```bash
-$ echo "Hi world!"
-Hi world!
+$ echo "Hi world"
+Hi world
 ```
 
 ## Redirect Text
