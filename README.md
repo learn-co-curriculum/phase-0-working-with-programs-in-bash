@@ -142,7 +142,7 @@ custom programs that you can run from the CLI that make you more efficient.
 ## Look Up Bash Documentation With `man`
 
 The `man` command is the key to command line wisdom. It brings up a **man**ual
-pages for almost any command. It's the equivalent of a help system for the
+page for almost any command. It's the equivalent of a help system for the
 command line. When Unix was first invented, its manuals were so big and heavy
 and expensive to print the developers had the idea to write the `man`ual
 in the operating system itself. This is an idea that's been popular with programmers
