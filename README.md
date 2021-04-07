@@ -74,7 +74,7 @@ into a file. The `>>` symbol will ***append*** content into the file while `>` m
 An _environment variable_ is a variable which can be configured to change the
 way the shell works and used by multiple applications or processes. You might
 tell the shell, via an environment variable "use colors whenever you can" or
-"never use colors in output" Discussing how to set these up is beyond our scope
+"never use colors in output". Discussing how to set these up is beyond our scope
 right now. But it's important to see that environment variables, like directory
 path shortcuts, or those mysterious _hidden files_ configure and adjust our CLI
 experience.
@@ -172,5 +172,5 @@ little practice, these new ways of working will become your ally.
 
 ## Resources
 
-* [Using The Terminal Command ‘cat’ To View The Contents Of Files](http://www.mactricksandtips.com/2012/07/using-the-terminal-command-cat-to-view-the-contents-of-files.html)
+* [Using The Terminal Command ‘cat’ To View The Contents Of Files](https://www.freecodecamp.org/news/the-cat-command-in-linux-how-to-create-a-text-file-with-cat-or-touch/)
 
