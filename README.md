@@ -23,10 +23,15 @@ a code editor, or getting information from the operating system.
 
 We can print the contents of a file by using the `cat` command. Entering `$ cat
 [filename]` reads a file and prints the content to your
-command line.
+command line. (In the previous command `[filename]` is just a placeholder 
+for where you would write out a valid file name).
 
 > **ASIDE**: `cat` comes from `catenate` a middle-English word that means "make like a chain".
 > Unix thinks of a file as a "chain of bytes" that it feeds to the screen.
+
+**Note:** *Any time you see the* `$` *character, you shouldn't type it in. This
+is just a standard way to represent a bash prompt. Yours may or may not be a*
+`$`.
 
 The `open` command is interesting because it will trigger the default action
 associated with the file type. "Default actions" are defined by the operating
