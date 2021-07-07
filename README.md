@@ -107,7 +107,7 @@ In this case it _would_ find the `ruby` program in
 the `PATH` variable wins so the order of the `PATH` is important.
 
 If this directory **were not** in the `PATH`, `kellyegreene` would have to do
-one of the following to run `ruby -v` &mdash; a command that shows the program's
+one of the following to run `ruby -v` — a command that shows the program's
 version.
 
 ```bash
@@ -137,8 +137,8 @@ will encounter more of them. Others you might see include:
 * Execution mode (e.g., production, development, staging, etc.)
 * Domain names
 * API URL/URIs
-* GIT_AUTHOR
-* GIT_AUTHOR_EMAIL
+* `GIT_AUTHOR`
+* `GIT_AUTHOR_EMAIL`
 
 Eventually, you'll learn to configure your shell environment to help you do work
 more efficiently. You'll define variables like `BIG_PROJECT_DIRECTORY` or write
