@@ -54,7 +54,7 @@ dialog with users.
 
 The `echo` command takes a string and prints it to the screen.
 
-```bash
+```console
 $ echo "Hi world"
 Hi world
 ```
@@ -63,7 +63,7 @@ Hi world
 
 You can "redirect" `echo` text into a file:
 
-```bash
+```console
 echo "I'm printing to the screen" >> my_file.txt
 ```
 
@@ -94,7 +94,7 @@ Paths are assigned to the `PATH` and separated by `:`.
 
 Let's try viewing the current `PATH`.
 
-```bash
+```console
 $ echo $PATH
 /Users/kellyegreene/.rvm/gems/ruby-2.7.4/bin:/Users/kellyegreene/.rvm/gems/ruby-2.7.4@global/bin:/Users/kellyegreene/.rvm/rubies/ruby-2.7.4/bin:/Users/kellyegreene/.nvm/versions/node/v8.9.4/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin:/usr/local/share/npm/lib/node_modules/grunt-cli/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/kellyegreene/Library/Android/sdk/tools:/Users/kellyegreene/Library/Android/sdk/platform-tools:/Users/kellyegreene/Library/Android/sdk/tools:/Users/kellyegreene/Library/Android/sdk/platform-tools:/Users/kellyegreene/.rvm/bin
 ```
@@ -111,7 +111,7 @@ If this directory **were not** in the `PATH`, `kellyegreene` would have to do
 one of the following to run `ruby -v` — a command that shows the program's
 version.
 
-```bash
+```console
 $ cd /Users/ianhollander/.rvm/rubies/ruby-2.7.4/bin
 $ ./ruby -v
 ruby 2.7.4p191 (2021-07-07 revision a21a3b7d23) [x86_64-darwin20]
@@ -119,7 +119,7 @@ ruby 2.7.4p191 (2021-07-07 revision a21a3b7d23) [x86_64-darwin20]
 
 or
 
-```bash
+```console
 $ /Users/ianhollander/.rvm/rubies/ruby-2.7.4/bin/ruby -v
 ruby 2.7.4p191 (2021-07-07 revision a21a3b7d23) [x86_64-darwin20]
 ```
@@ -159,7 +159,7 @@ and environmentalists and mail-carriers ever since.
 For example, if you're curious what the options on `ps` mean, you can go to your
 terminal and enter:
 
-```bash
+```console
 $ man ps
 ```
 
