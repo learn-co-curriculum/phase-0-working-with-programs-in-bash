@@ -64,7 +64,7 @@ Hi world
 You can "redirect" `echo` text into a file:
 
 ```console
-echo "I'm printing to the screen" >> my_file.txt
+$ echo "I'm printing to the screen" >> my_file.txt
 ```
 
 This is called _redirection_. We're "redirecting" what we see on the monitor
