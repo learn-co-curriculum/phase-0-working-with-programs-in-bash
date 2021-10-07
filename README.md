@@ -104,7 +104,7 @@ When `kellyegreene` types `ruby` the shell starts by looking at the first
 directory in the `PATH` to see if it finds a program that matches.
 
 In this case it _would_ find the `ruby` program in
-`/Users/ianhollander/.rvm/rubies/ruby-2.7.4/bin` and run it. The first match in
+`/Users/kellyegreene/.rvm/rubies/ruby-2.7.4/bin` and run it. The first match in
 the `PATH` variable wins so the order of the `PATH` is important.
 
 If this directory **were not** in the `PATH`, `kellyegreene` would have to do
@@ -112,7 +112,7 @@ one of the following to run `ruby -v` — a command that shows the program's
 version.
 
 ```console
-$ cd /Users/ianhollander/.rvm/rubies/ruby-2.7.4/bin
+$ cd /Users/kellyegreene/.rvm/rubies/ruby-2.7.4/bin
 $ ./ruby -v
 ruby 2.7.4p191 (2021-07-07 revision a21a3b7d23) [x86_64-darwin20]
 ```
@@ -120,7 +120,7 @@ ruby 2.7.4p191 (2021-07-07 revision a21a3b7d23) [x86_64-darwin20]
 or
 
 ```console
-$ /Users/ianhollander/.rvm/rubies/ruby-2.7.4/bin/ruby -v
+$ /Users/kellyegreene/.rvm/rubies/ruby-2.7.4/bin/ruby -v
 ruby 2.7.4p191 (2021-07-07 revision a21a3b7d23) [x86_64-darwin20]
 ```
 
